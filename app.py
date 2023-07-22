@@ -23,7 +23,7 @@ def text_clean(text):
 
 def predict(rev):
     text_clean(rev)
-    model=joblib.load('sentiment_analyzer.sav')
+    model=joblib.load('model.sav')
     tfid=joblib.load('tfidf.sav')
     rev=rev.split('\n')
     rev=tfid.transform(rev).toarray()
