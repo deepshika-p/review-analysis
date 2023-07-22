@@ -1,0 +1,6 @@
+streamlit
+scikit-learn==1.2.1
+pandas
+joblib
+nltk
+predictions
