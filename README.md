@@ -1,1 +1,1 @@
-App link: https://flipkart-sentiment-analysis.streamlit.app/
+App link: https://review-analysis.streamlit.app/
