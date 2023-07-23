@@ -55,7 +55,7 @@ rev=st.text_input('Review')
 if st.button('Predict sentiment'):
     sentiment=predict(rev)
     if(sentiment.all()==1):
-        st.text("The review is positive")
+        st.markdown(f'<p style="color:#2dc937;font-size:24px;">{"The review is positive"}</p>', unsafe_allow_html=True)
     else:
         st.text("The review is negative")
     
