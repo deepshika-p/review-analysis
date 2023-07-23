@@ -44,7 +44,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 page_bg_img = '''
 <style>
 .stApp {
-background-image: url("https://media.sproutsocial.com/uploads/2017/11/listening-sentiment-analysis-feature-img.png");
+background-image: url("https://imageio.forbes.com/specials-images/imageserve/612a5fe11444398a55b0da5e/AI-enabled-sentiment-analysis/960x0.jpg?format=jpg&width=960");
 background-size: cover;
 }
 </style>
