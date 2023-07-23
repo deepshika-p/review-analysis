@@ -13,8 +13,9 @@ nltk.download('omw-1.4')
 from nltk.corpus import stopwords
 
 def text_clean(text):
-    text = text.lower()
-    text = re.sub('[^a-z A-Z 0-9-]+', '', text)
+    text = str(text).lower()
+    text = re.sub('[^a-z A-Z 0-9]+', '', text)
+    text = re.sub(r'\w*\d\w*', '', text)
     stop_words = stopwords.words('english')
     text = " ".join([i for i in text.split() if i not in stop_words or i=='not'])
     text = re.sub(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', '' , str(text))
@@ -22,10 +23,10 @@ def text_clean(text):
     return text
 
 def predict(rev):
-    text_clean(rev)
+    rev=text_clean(rev)
     model=joblib.load('model.sav')
     tfid=joblib.load('tfidf.sav')
-    rev=rev.split('\n')
+    rev=rev.split(' ')
     rev=tfid.transform(rev).toarray()
     return model.predict(rev)
 
@@ -35,7 +36,7 @@ rev=st.text_input('Review')
 
 if st.button('Predict sentiment'):
     sentiment=predict(rev)
-    if(sentiment==1):
+    if(sentiment.all()==1):
         st.text("The review is positive")
     else:
         st.text("The review is negative")
