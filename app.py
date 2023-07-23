@@ -32,6 +32,25 @@ def predict(rev):
 
 st.title('Sentiment Analyzer')
 st.markdown('ML model to scrap customer reviews from Flipkart and analyze them to determine the sentiment.')
+
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
+
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://media.sproutsocial.com/uploads/2017/11/listening-sentiment-analysis-feature-img.png");
+background-size: cover;
+}
+</style>
+''' 
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 rev=st.text_input('Review')
 
 if st.button('Predict sentiment'):
