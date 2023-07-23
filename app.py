@@ -43,7 +43,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 
 page_bg_img = '''
 <style>
-body {
+.stApp {
 background-image: url("https://media.sproutsocial.com/uploads/2017/11/listening-sentiment-analysis-feature-img.png");
 background-size: cover;
 }
@@ -52,7 +52,6 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 rev=st.text_input('Review')
-
 if st.button('Predict sentiment'):
     sentiment=predict(rev)
     if(sentiment.all()==1):
